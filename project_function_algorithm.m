@@ -1,4 +1,4 @@
-function []=project_function_algorithm()
+function [trial_A,trial_B,trial_C,trial_D,trial_E]=project_function_algorithm()
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ENGR 132 
 % Program Description 
@@ -548,6 +548,11 @@ grid on
 
 %% ____________________
 %% RESULTS
+trial_A=[trial_11,trial_12,trial_13,trial_14,trial_15,trial_16,trial_17,trial_18,trial_19,trial_10];
+trial_B=[trial_21,trial_22,trial_23,trial_24,trial_25,trial_26,trial_27,trial_28,trial_29,trial_20];
+trial_C=[trial_31,trial_32,trial_33,trial_34,trial_35,trial_36,trial_37,trial_38,trial_39,trial_30];
+trial_D=[trial_41,trial_42,trial_43,trial_44,trial_45,trial_46,trial_47,trial_48,trial_49,trial_40];
+trial_E=[trial_51,trial_52,trial_53,trial_54,trial_55,trial_56,trial_57,trial_58,trial_59,trial_50];
 
 
 %% ____________________

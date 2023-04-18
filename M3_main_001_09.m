@@ -1,4 +1,4 @@
-function [Mconstant, maxVel, initVel] = M3_main_001_09(KEtesting)
+function [Mconstant, maxVel, initVel] = M2_main_001_09(KEtesting)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ENGR 132 
 % Program Description 
@@ -32,8 +32,8 @@ function [Mconstant, maxVel, initVel] = M3_main_001_09(KEtesting)
 
 % SMALLEST LENGTH GOES TO ROW 1147 (t = 1142 seconds)
 
-roughdata = readmatrix("Data_PGOX50_enzyme.csv", NumHeaderLines=3);
-data = M2_smoothData_001_09(roughdata); %smoothes the data
+roughData = readmatrix(KEtesting, NumHeaderLines=3);
+data = M2_smoothData_001_09(roughData); %smoothes the data
 r = 0; %loop control variable 
 
 
@@ -41,13 +41,9 @@ r = 0; %loop control variable
 %% CALCULATIONS
 
 while r < 1
-    %P = data((5:1143),(2+20*r):(22+20*r-1)); %extracts concentration data for the enzyme
     P = data((6:1143),(2:11)); %extracts concentration data for the enzyme
     S = data(1,2:11); %extracts initial concentation data for the enzyme
     [vi, K, Vmax] = M2_parameterID_001_09(P,S); %parameter identification
-%     disp(vi)
-%     disp(K)
-%     disp(Vmax)
     n = 1; %loop control variable
     Mconstant(r+1) = K; %stores all michaelis constants into a vector
     maxVel(r+1) = Vmax; %stores all max velocities in a vector
@@ -58,6 +54,10 @@ while r < 1
     end
     r = r + 1;
 end
+
+[r2, SSE, Vo, VoModel] = M3_MM_PGOX50_001_09(KEtesting)
+
+disp(SSE)
 
 %% ____________________
 %% ACADEMIC INTEGRITY STATEMENT

@@ -32,6 +32,16 @@ function [vi, K, Vmax] = M2_parameterID_001_09(P,S)
 %% ____________________
 %% INITIALIZATION
 
+% ACTUAL INITIALIZATION
+i = 1;
+while i <= 10
+    n = 1;
+    while n <= 1139
+        test(n,i) = (P(n,i) + P(n,i+10))./2;
+        n = n + 1;
+    end
+    i = i + 1;
+end
 
 %% ____________________
 %% CALCULATIONS
@@ -39,7 +49,7 @@ function [vi, K, Vmax] = M2_parameterID_001_09(P,S)
 % Calculates vi for each test
 i = 1;
 while i <= 10
-    vi(i) = P(11,i)./10;
+    vi(i) = test(11,i)./10;
     i = i + 1;
 end
 

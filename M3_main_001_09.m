@@ -1,4 +1,4 @@
-function [Mconstant, maxVel, initVel] = M2_main_001_09(KEtesting)
+function [Mconstant, maxVel, initVel] = M3_main_001_09(KEtesting)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ENGR 132 
 % Program Description 
@@ -32,8 +32,8 @@ function [Mconstant, maxVel, initVel] = M2_main_001_09(KEtesting)
 
 % SMALLEST LENGTH GOES TO ROW 1147 (t = 1142 seconds)
 
-roughData = readmatrix("Data_PGOX50_enzyme(1).csv", NumHeaderLines=3);
-data = M2_smoothData_001_09(roughData); %smoothes the data
+roughdata = readmatrix("Data_PGOX50_enzyme.csv", NumHeaderLines=3);
+data = M2_smoothData_001_09(roughdata); %smoothes the data
 r = 0; %loop control variable 
 
 

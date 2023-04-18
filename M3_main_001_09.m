@@ -57,8 +57,6 @@ end
 
 [r2, SSE, Vo, VoModel] = M3_MM_PGOX50_001_09(KEtesting)
 
-disp(SSE)
-
 %% ____________________
 %% ACADEMIC INTEGRITY STATEMENT
 % We have not used source code obtained from any other unauthorized

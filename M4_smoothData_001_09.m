@@ -38,7 +38,7 @@ for r = 1:length(data1)
     end
 end
     
-for r = 1:100
+for r = 1:10
     vector = movmean(data1(1:end,r),10);
     for i = 1:1139
         smooth_dat(i,r) = vector(i,1);

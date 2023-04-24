@@ -31,6 +31,7 @@
 
 % SMALLEST LENGTH GOES TO ROW 1147 (t = 1142 seconds)
 
+VoModel = zeros(10,5);
 KEtesting = 'Data_nextGen_KEtesting_allresults.csv';
 roughData = readmatrix(KEtesting);
 data = M4_smoothData_001_09(roughData); %smoothes the data
@@ -55,8 +56,35 @@ while r < 5
     r = r + 1;
 end
 
+for s = 1:5
+    for i = 1:length(S)
+        VoModel(i,s) = (maxVel(s).*S(i))./(Mconstant(s) + S(i)); % creates y-values for michaels-menten equation   
+    end
+end
 
+% for lcv = 1:5
+%     figure()
+%     plot(S,initVel(:,lcv),'ms')
+%     title('Initial Velocities vs. Substrate Concentration')
+%     xlabel('Concentration (uM)')
+%     ylabel('Initial Velocity')
+%     grid on
+%     hold on
+%     plot(S,VoModel(:, lcv),'b')
+%     legend('Recorded Data','Model Predictions')
+% end
 
+figure()
+sgtitle('Initial Velocities vs. Substrate Concentration')
+for lcv = 1:5
+    subplot(2,3,lcv)
+    plot(S,VoModel(:, lcv),'b')
+    hold on
+    plot(S,initVel(:,lcv),'ms')
+    xlabel('Concentration (uM)')
+    ylabel('Initial Velocity')
+    grid on
+end
 
 
 
